@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0e1c34;
 }
 
 .App-logo {
@@ -14,7 +16,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  background-color: #0e1c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +25,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url('plano_de_fundo.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .App-link {
@@ -61,18 +67,118 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 15px;
   border-radius: 8px;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 200px;
 }
 
 .info-box h2 {
   margin: 0 0 10px;
   font-size: 18px;
+  color: rgb(0, 0, 0);
 }
 
 .info-box p {
   margin: 5px 0;
+  color: rgb(0, 0, 0);
+}
+
+.objects-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Para adicionar espaço entre os itens */
+  padding: 20px;
+}
+
+/* Coluna para Near Earth Objects (ocupa 1/3) */
+.list-column {
+  flex-grow: 1; /* Ocupa 1/3 do espaço */
+  margin-right: 10px; /* Espaço à direita */
+  padding: 10px;
+  background-color: #0e1c34;
+  border-radius: 5px;
+}
+
+.whites {
+  color:#ffffff;
+}
+
+/* Coluna para Potentially Hazardous Objects (ocupa 2/3) */
+.hazardous-column {
+  flex-grow: 2; /* Ocupa 2/3 do espaço */
+  padding: 10px;
+  background-color: #0e1c34;
+  color:#f9f9f9;
+  border-radius: 5px;
+}
+
+.hazardous-title {
+  color:#ffffff;
+}
+
+.hazardous-name {
+  color:#ffffff;
+}
+
+/* Estilo básico para as listas */
+.list-container {
+  padding: 0;
+  max-height: 800px; /* Limita a altura máxima da coluna */
+  overflow-y: auto;  /* Adiciona rolagem quando necessário */
+}
+
+ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  border: 1px solid #ffffff;  
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.planets-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cards se ajustam automaticamente */
+  gap: 20px;
+}
+
+.planet-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.planet-card:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.planet-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.planet-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.planet-info p {
+  font-size: 1.3rem;
+  color: #262626;
 }
